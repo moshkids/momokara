@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="span12 contents-header">
+      <h1>Playlist</h1>
+    </div>
+    <table class="table">
+      <tbody>
+      <% @playlists.each do |playlist| %>
+        <tr>
+          <td><%= playlist.title %></td>
+          <td><%= link_to sanitize('<i class="icon-pencil"></i>'), edit_playlist_path(playlist) %></td>
+          <td><%= link_to sanitize('<i class="icon-remove"></i> '), playlist, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+          <td><%= link_to sanitize('<i class="icon-chevron-right"</i>'), playlist %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <p>
+      <%= link_to 'New Playlist', new_playlist_path, { :class => 'btn btn-large btn-block btn-info'} %>
+    </p>
+  </div>
+</div>

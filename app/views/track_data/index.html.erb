@@ -1,0 +1,27 @@
+<h1>Listing track_data</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Lyric</th>
+    <th>Time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @track_data.each do |track_datum| %>
+  <tr>
+    <td><%= track_datum.title %></td>
+    <td><%= track_datum.lyric %></td>
+    <td><%= track_datum.time %></td>
+    <td><%= link_to 'Show', track_datum %></td>
+    <td><%= link_to 'Edit', edit_track_datum_path(track_datum) %></td>
+    <td><%= link_to 'Destroy', track_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Track datum', new_track_datum_path %>

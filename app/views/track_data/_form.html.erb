@@ -1,0 +1,29 @@
+<%= form_for(@track_datum) do |f| %>
+  <% if @track_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@track_datum.errors.count, "error") %> prohibited this track_datum from being saved:</h2>
+
+      <ul>
+      <% @track_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :lyric %><br />
+    <%= f.text_field :lyric %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br />
+    <%= f.text_field :time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

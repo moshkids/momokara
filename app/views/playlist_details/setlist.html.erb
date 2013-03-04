@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="span12 contents-header">
+      <h1>SetList</h1>
+    </div>
+    <table class="table">
+      <tbody>
+      <% @setlist.each do |setlist| %>
+          <tr>
+            <td><%= setlist.track_datum.class %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

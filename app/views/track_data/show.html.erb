@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @track_datum.title %>
+</p>
+
+<p>
+  <b>Lyric:</b>
+  <%= @track_datum.lyric %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @track_datum.time %>
+</p>
+
+
+<%= link_to 'Edit', edit_track_datum_path(@track_datum) %> |
+<%= link_to 'Back', track_data_path %>
