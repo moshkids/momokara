@@ -16,5 +16,5 @@ CSV.foreach('db/playlist.csv') do |row|
 end
 
 CSV.foreach('db/playlistdetail.csv') do |row|
-  PlaylistDetail.create(:playlist_id => row[0], :track_no => row[1], :track_data_id => row[2])
+  PlaylistDetail.create(:playlist_id => row[0], :track_no => row[1], :track_datum_id => row[2])
 end

@@ -10,7 +10,7 @@
           <td><%= playlist.title %></td>
           <td><%= link_to sanitize('<i class="icon-pencil"></i>'), edit_playlist_path(playlist) %></td>
           <td><%= link_to sanitize('<i class="icon-remove"></i> '), playlist, method: :delete, data: { confirm: 'Are you sure?'} %></td>
-          <td><%= link_to sanitize('<i class="icon-chevron-right"</i>'), playlist %></td>
+          <td><%= link_to sanitize('<i class="icon-chevron-right"</i>'), {:controller => "setlist", :action => "index", :id => playlist.id} %></td>
         </tr>
       <% end %>
       </tbody>

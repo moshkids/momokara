@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(:version => 20130303113357) do
 
   create_table "playlist_details", :force => true do |t|
     t.integer  "track_no"
-    t.integer  "track_data_id"
+    t.integer  "track_datum_id"
     t.integer  "playlist_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "playlists", :force => true do |t|

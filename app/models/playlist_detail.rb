@@ -1,5 +1,5 @@
 class PlaylistDetail < ActiveRecord::Base
-  attr_accessible :playlist_id, :track_data_id, :track_no
+  attr_accessible :playlist_id, :track_datum_id, :track_no
   belongs_to :playlist
   belongs_to :track_datum
 
