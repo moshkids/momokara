@@ -6,7 +6,9 @@ Momokara::Application.routes.draw do
   resources :track_data
 
   match 'setlist/:id', :to => 'setlist#index'
-  match 'lyric/:id', :to => 'setlist#lyric'
+  match 'setlist/edit/:id', :to => 'setlist#edit'
+
+  match 'lyric/:id', :to => 'lyric#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

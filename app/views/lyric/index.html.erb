@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <div class="span12 contents-header">
+      <h2><%= @track.title %></h2>
+    </div>
+  </div>
+</div>
+<%= raw @track.lyric %>
+<%= link_to sanitize('<div class="btn btn-primary">next</div>'), {:controller => "lyric", :action => "index", :id => @nextPlaylistDetail.id} %>

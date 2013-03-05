@@ -10,5 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require 'base'
+ *= require jquery.ui.all
  */
-*= require 'base'
+

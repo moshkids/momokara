@@ -1,17 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="span12 contents-header">
-      <h2><%= @playlistTitle %></h2>
+      <h2><%= @playlist.title %></h2>
     </div>
     <table class="table">
       <tbody>
       <% @playlistDetails.each do |detail| %>
           <tr>
             <td><%= detail.track_datum.title %></td>
-            <td><%= link_to sanitize('<i class="icon-chevron-right"</i>'), {:controller => "setlist", :action => "lyric", :id => detail.id} %></td>
+            <td><%= link_to sanitize('<i class="icon-chevron-right"</i>'), {:controller => "lyric", :action => "index", :id => detail.id} %></td>
           </tr>
       <% end %>
       </tbody>
     </table>
+    <%= link_to sanitize('<div class="btn btn-primary">edit</div>'), {:controller => "setlist", :action => "edit", :id => @playlist.id} %>
   </div>
 </div>

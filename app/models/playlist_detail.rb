@@ -6,4 +6,8 @@ class PlaylistDetail < ActiveRecord::Base
   def self.find_setlist(playlist_id)
     return PlaylistDetail.where(:playlist_id => playlist_id).order('track_no')
   end
+
+  def self.find_by_playlist_id_and_track_no(playlist_id, track_no)
+    return PlaylistDetail.where(:playlist_id => playlist_id, :track_no => track_no).first
+  end
 end
