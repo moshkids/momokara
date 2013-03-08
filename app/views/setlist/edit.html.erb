@@ -3,20 +3,24 @@
     <div class="span12 contents-header">
       <h2><%= @playlist.title %></h2>
     </div>
-    <table class="table">
-      <tbody id="sortable">
-      <% @playlistDetails.each do |detail| %>
-          <tr>
-            <td>
-              <%= detail.track_datum.title %>
-            </td>
-            <td>
-              <i class="icon-remove"></i>
-            </td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
+    <%= form_tag ({:action => 'edit_update', :id => @playlist.id}) do %>
+        <table class="table">
+          <tbody id="sortable">
+          <% @playlistDetails.each do |detail| %>
+              <tr>
+                <td>
+                  <%= detail.track_datum.title %>
+                </td>
+                <td>
+                  <i class="icon-remove"></i>
+                </td>
+                <%= hidden_field_tag 'track_id[]', detail.track_datum.id %>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <button class="btn btn-primary" type="submit">OK</button>
+    <% end %>
   </div>
 </div>
 
@@ -24,7 +28,7 @@
     $('#sortable').sortable();
     $('#sortable').disableSelection();
 
-    $('table td i').click(function(){
+    $('table td i').click(function () {
         $(this).parent().parent().remove();
     });
 </script>

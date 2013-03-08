@@ -13,6 +13,7 @@
       <% end %>
       </tbody>
     </table>
+    <%= link_to sanitize('<div class="btn btn-primary">add</div>'), {:controller => "setlist", :action => "add", :id => @playlist.id} %>
     <%= link_to sanitize('<div class="btn btn-primary">edit</div>'), {:controller => "setlist", :action => "edit", :id => @playlist.id} %>
   </div>
 </div>

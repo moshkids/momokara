@@ -7,6 +7,9 @@ Momokara::Application.routes.draw do
 
   match 'setlist/:id', :to => 'setlist#index'
   match 'setlist/edit/:id', :to => 'setlist#edit'
+  match 'setlist/edit_update/:id', :to => 'setlist#edit_update'
+  match 'setlist/add/:id', :to => 'setlist#add'
+  match 'setlist/add_update/:id', :to => 'setlist#add_update'
 
   match 'lyric/:id', :to => 'lyric#index'
 

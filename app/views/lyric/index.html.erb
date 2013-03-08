@@ -6,4 +6,10 @@
   </div>
 </div>
 <%= raw @track.lyric %>
-<%= link_to sanitize('<div class="btn btn-primary">next</div>'), {:controller => "lyric", :action => "index", :id => @nextPlaylistDetail.id} %>
+<div>
+  <%= if @nextPlaylistDetail.nil?
+        link_to sanitize('<div class="btn btn-primary">setlist top</div>'), {:controller => "setlist", :action => "index", :id => @playlistDetail.playlist.id}
+      else
+        link_to sanitize('<div class="btn btn-primary">' + @nextPlaylistDetail.track_datum.title + '</div>'), {:controller => "lyric", :action => "index", :id => @nextPlaylistDetail.id}
+      end %>
+</div>
