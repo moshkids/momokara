@@ -7,6 +7,10 @@ class TrackDatum < ActiveRecord::Base
     for detail in details
       exclusion_ids.push(detail.track_datum.id)
     end
-    return TrackDatum.where("id not in (?)", exclusion_ids).order(:id).all
+    if exclusion_ids.empty?
+      return TrackDatum.order(:id).all
+    else
+      return TrackDatum.where("id not in (?)", exclusion_ids).order(:id).all
+    end
   end
 end

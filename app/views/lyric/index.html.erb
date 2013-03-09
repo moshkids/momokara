@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="span12 contents-header">
-      <h2><%= @track.title %></h2>
+      <h3><%= @track.title %></h3>
     </div>
   </div>
 </div>
 <%= raw @track.lyric %>
-<div>
+<p>
   <%= if @nextPlaylistDetail.nil?
-        link_to sanitize('<div class="btn btn-primary">setlist top</div>'), {:controller => "setlist", :action => "index", :id => @playlistDetail.playlist.id}
+        link_to sanitize('<i class="icon-home icon-white"></i>&nbsp;プレイリスト一覧'), {:controller => "playlists", :action => "index"}, {:class => 'btn btn-large btn-block btn-info'}
       else
-        link_to sanitize('<div class="btn btn-primary">' + @nextPlaylistDetail.track_datum.title + '</div>'), {:controller => "lyric", :action => "index", :id => @nextPlaylistDetail.id}
+        link_to sanitize(@nextPlaylistDetail.track_datum.title + '&nbsp;<i class="icon-forward icon-white"></i>'), {:controller => "lyric", :action => "index", :id => @nextPlaylistDetail.id}, {:class => 'btn btn-large btn-block btn-info'}
       end %>
-</div>
+</p>

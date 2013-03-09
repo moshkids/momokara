@@ -1,7 +1,7 @@
 class SetlistController < ApplicationController
   def index
     @playlistDetails = PlaylistDetail.find_setlist(params[:id])
-    @playlist = @playlistDetails[0].playlist
+    @playlist = Playlist.find(params[:id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -49,14 +49,16 @@ class SetlistController < ApplicationController
   end
 
   def add_update
-    @playlist = Playlist.find(params[:id])
+    playlist = Playlist.find(params[:id])
     playlistDetails = PlaylistDetail.find_setlist(params[:id])
     next_count = playlistDetails.length + 1
     trackIds = params[:track_id]
-    for trackId in trackIds
-      PlaylistDetail.create(:playlist_id => @playlist.id, :track_datum_id => trackId, :track_no => next_count)
-      next_count += 1
+    if !trackIds.nil?
+      for trackId in trackIds
+        PlaylistDetail.create(:playlist_id => playlist.id, :track_datum_id => trackId, :track_no => next_count)
+        next_count += 1
+      end
     end
-    redirect_to "/setlist/#{@playlist.id}"
+    redirect_to "/setlist/#{playlist.id}"
   end
 end

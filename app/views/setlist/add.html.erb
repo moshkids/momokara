@@ -9,16 +9,14 @@
           <% @tracks.each do |track| %>
               <tr>
                 <td>
-                  <%= check_box_tag "track_id[]", track.id %>
-                </td>
-                <td>
-                  <%= track.title %>
+                  <label class="checkbox"><%= check_box_tag "track_id[]", track.id %>
+                  <%= track.title %></label>
                 </td>
               </tr>
           <% end %>
           </tbody>
         </table>
-        <button class="btn btn-primary" type="submit">OK</button>
+        <button class="btn btn-info" type="submit">OK</button>
     <% end %>
   </div>
 </div>

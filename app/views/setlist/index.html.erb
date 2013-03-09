@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="span12 contents-header">
-      <h2><%= @playlist.title %></h2>
+      <h3><%= @playlist.title %></h3>
     </div>
     <table class="table">
       <tbody>
@@ -13,7 +13,10 @@
       <% end %>
       </tbody>
     </table>
-    <%= link_to sanitize('<div class="btn btn-primary">add</div>'), {:controller => "setlist", :action => "add", :id => @playlist.id} %>
-    <%= link_to sanitize('<div class="btn btn-primary">edit</div>'), {:controller => "setlist", :action => "edit", :id => @playlist.id} %>
+
+    <%= link_to "追加", {:controller => "setlist", :action => "add", :id => @playlist.id}, {:class => 'btn btn-info'} %>
+    <% if !@playlistDetails.empty? %>
+        <%= link_to "編集", {:controller => "setlist", :action => "edit", :id => @playlist.id}, {:class => 'btn btn-info'} %>
+    <% end %>
   </div>
 </div>

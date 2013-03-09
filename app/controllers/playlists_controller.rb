@@ -42,14 +42,8 @@ class PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(params[:playlist])
 
-    respond_to do |format|
-      if @playlist.save
-        format.html { redirect_to @playlist, notice: 'Playlist was successfully created.' }
-        format.json { render json: @playlist, status: :created, location: @playlist }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @playlist.errors, status: :unprocessable_entity }
-      end
+    if @playlist.save
+      redirect_to "/setlist/#{@playlist.id}"
     end
   end
 
@@ -58,14 +52,8 @@ class PlaylistsController < ApplicationController
   def update
     @playlist = Playlist.find(params[:id])
 
-    respond_to do |format|
-      if @playlist.update_attributes(params[:playlist])
-        format.html { redirect_to @playlist, notice: 'Playlist was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @playlist.errors, status: :unprocessable_entity }
-      end
+    if @playlist.update_attributes(params[:playlist])
+      redirect_to "/playlists"
     end
   end
 
