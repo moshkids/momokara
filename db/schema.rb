@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20130303113357) do
 
   create_table "track_data", :force => true do |t|
     t.string   "title"
-    t.string   "lyric"
+    t.text     "lyric"
     t.string   "time"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
