@@ -7,18 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-        <%= link_to sanitize('Top'), {:controller => "playlists", :action => "index"}, {:class => "brand"} %>
-    </div>
-  </div>
-</div>
 
 <%= yield %>
 
 <footer class="footer">
-  <p>Momokara</p>
+  <p><%= link_to sanitize('Momokara'), {:controller => "playlists", :action => "index"}%></p>
 </footer>
 </body>
 </html>
