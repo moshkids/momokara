@@ -9,6 +9,7 @@
         <tr>
           <td><%= playlist.title %></td>
           <td><%= link_to sanitize('<i class="icon-pencil"></i>'), edit_playlist_path(playlist) %></td>
+          <td><a href="momokara://setlistimport?id=<%= playlist.id %>"><i class="icon-download-alt"></i></a></td>
           <td><%= link_to sanitize('<i class="icon-remove"></i> '), playlist, method: :delete, data: { confirm: '削除しますか?'} %></td>
           <td><%= link_to sanitize('<i class="icon-chevron-right"</i>'), {:controller => "setlist", :action => "index", :id => playlist.id} %></td>
         </tr>
