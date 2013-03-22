@@ -8,7 +8,7 @@
       <% @playlistDetails.each do |detail| %>
           <tr>
             <td><%= detail.track_datum.title %></td>
-            <td><%= link_to sanitize('<i class="icon-chevron-right"</i>'), {:controller => "lyric", :action => "index", :id => detail.id} %></td>
+            <td><%= link_to sanitize('<i class="icon-chevron-right icon-white"</i>'), {:controller => "lyric", :action => "index", :id => detail.id} %></td>
           </tr>
       <% end %>
       </tbody>
