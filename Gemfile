@@ -47,7 +47,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '2.3.1.0'
 group :assets do
   gem 'jquery-ui-rails'
 end
