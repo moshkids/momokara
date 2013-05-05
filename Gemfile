@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
-gem 'rake', '10.1.0.beta.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -12,6 +11,7 @@ end
 
 group :development do
   gem "sqlite3"
+  gem 'rake', '10.1.0.beta.3'
 end
 
 group :test do
